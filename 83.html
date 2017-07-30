@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style type="text/css">
+#div1 {width:198px;height:66px;padding:10px;border:1px solid #aaaaaa;}
+</style>
+
+<script type="text/javascript">
+
+function allowDrop(ev)//放到何处-ondragover
+{
+ev.preventDefault();//调用 preventDefault() 来避免浏览器对数据的默认处理（drop 事件的默认行为是以链接形式打开）
+}
+
+function drag(ev)//拖动什么-ondragstart 和 setData()
+{
+ev.dataTransfer.setData("Text",ev.target.id);//dataTransfer.setData() 方法设置被拖数据的数据类型和值
+}
+
+function drop(ev)//进行放置-ondrop
+{
+ev.preventDefault();
+var data=ev.dataTransfer.getData("Text");//通过 dataTransfer.getData("Text") 方法获得被拖的数据。该方法将返回在 setData() 方法中设置为相同类型的任何数据
+ev.target.appendChild(document.getElementById(data));//把被拖元素追加到放置元素（目标元素）中
+}
+
+</script>
+</head>
+<body>
+<a href="http://www.w3school.com.cn/tiy/t.asp?f=html5_draganddrop">图片的URL</a>
+<p>请把 W3School 的图片拖放到矩形中:</p>
+
+<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div><!被拖数据是被拖元素的 id ("drag1")>
+</br>
+<img id="drag1" src="/home/mo/Pictures/eg_dragdrop_w3school.gif" draggable="true" ondragstart="drag(event)" /> <!draggable的属性为true,使得元素可拖放>/<!id="drag1"是什么意思？为啥突然出现？>
+
+</body>
+</html>
