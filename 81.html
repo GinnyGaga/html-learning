@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>菜鸟教程(runoob.com)</title>
+</head>
+<body>
+<a href="http://www.w3school.com.cn/tiy/t.asp?f=html5_video_dom">the URL of the video</a>
+
+<div style="text-align:center;"><!控制键按钮居于中间>
+  <button onclick="playPause()">播放/暂停</button>
+  <button onclick="makeBig()">大</button>
+  <button onclick="makeNormal()">中</button>
+  <button onclick="makeSmall()">小</button>
+  <br /><!文本>
+
+  <video id="video1" width="420" style="margin-top:10px;"><!定义标签id,视频上边界为10>
+    <source src="/home/mo/Videos/mov_bbb.ogg" type="video/mp4" />
+    <source src="/home/mo/Videos/mov_bbb.ogg" type="video/mp4" />
+  </video><!视频>
+</div>
+
+<script type="text/javascript">
+var myVideo=document.getElementById("video1");//获取标签：视频
+
+function playPause()//函数1
+{
+if (myVideo.paused)
+  myVideo.play();
+else
+  myVideo.pause();
+}
+function makeBig()//函数2
+{
+myVideo.width=560;
+}
+
+function makeSmall()//函数3
+{
+myVideo.width=320;
+}
+
+function makeNormal()//函数4
+{
+myVideo.width=420;
+}
+
+</script><!javascript脚本>
+
+</body>
+</html>
