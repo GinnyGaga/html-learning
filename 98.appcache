@@ -1,0 +1,14 @@
+CACHE MANIFEST
+# 2012-02-21 v1.0.0
+# 注释：需要缓存的文件，无论在线与否，均从缓存里读取
+/theme.css
+/logo.gif
+/main.js 
+
+# 注释：不缓存的文件，无论缓存中存在与否，均从新获取
+NETWORK:
+login.asp
+
+# 注释：不缓存的文件，无论缓存中存在与否，均从新获取
+FALLBACK:
+/html5/ /404.html
